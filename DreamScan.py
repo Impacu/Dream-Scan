@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-import os
-import subprocess
-import random
-import time
+
 
 GREEN = '\033[92m'
 BLUE = '\033[34m'
