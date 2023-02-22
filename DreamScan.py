@@ -80,15 +80,16 @@ def main():
 
     # Run the Nmap scan with the specified options
     nmap_cmd = ["nmap", "-sV" + scan_type, "-p", port_range, timing]
-    print("Initializing Nmap Scan...")
     # If the user specified an output filename, add it to the command
     if output:
+        print("Initializing Nmap Scan...")
         nmap_cmd += ["-oN", output, target]
         result = subprocess.run(nmap_cmd, capture_output=True)
         print(result.stdout.decode("utf-8"))
 
     # If the user did not specify an output filename, print the results to the console
     if not output:
+        print("Initializing Nmap Scan...")
         nmap_cmd += [target]
         result = subprocess.run(nmap_cmd, capture_output=True)
         print(result.stdout.decode())
