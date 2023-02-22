@@ -68,7 +68,9 @@ print("Dream Scan Successfully Loaded!")
 print('''
 ''')
 
+
 def main():
+ 
     #Prompt the user for inputs
     target = input("Enter target IP address or range: ")
     scan_type = input("Enter scan type (ex. TCP, UDP, SYN, etc.)(Leave blank for default TCP): ")
@@ -78,7 +80,7 @@ def main():
 
     # Run the Nmap scan with the specified options
     nmap_cmd = ["nmap", "-sV" + scan_type, "-p", port_range, timing]
-
+    print("Initializing Nmap Scan...")
     # If the user specified an output filename, add it to the command
     if output:
         nmap_cmd += ["-oN", output, target]
@@ -93,7 +95,7 @@ def main():
 
     # Define the keyword to search for
     keyword = input("Enter the service and version: ")
-    print("Loading exploits...")
+    print("Loading Exploits...")
 
     # Execute the searchsploit command with the given keyword
     output = subprocess.check_output(["searchsploit", "-t", keyword], universal_newlines=True)
@@ -102,9 +104,9 @@ def main():
     print(output)
 
     def start_metasploit():
-        answer = input("Do you want to start Metasploit? (y/n)")
+        answer = input("Do you want to start Metasploit? (y/n) ")
         if answer == "y":
-            print("Loading Metasploit please standby...")
+            print("Loading Metasploit Please Standby...")
         if answer == "y":
             try:
                 subprocess.run(['msfconsole'])
