@@ -6,7 +6,6 @@ import time
 
 GREEN = '\033[92m'
 BLUE = '\033[34m'
-LIGHT_BLUE = '\033[34m\033[32m'
 YELLOW = '\033[33m'
 RED = '\033[31m'
 END = '\033[0m'
@@ -49,7 +48,7 @@ print('''
 # Define the loading strings
 loading1 = f'{RED}■▢▢▢▢▢▢▢▢▢{END} 10%\r'
 loading2 = f'{YELLOW}■■■■▢▢▢▢▢▢{END} 40%\r'
-loading3 = f'{LIGHT_BLUE}■■■■■■■■▢▢{END} 80%\r'
+loading3 = f'{BLUE}■■■■■■■■▢▢{END} 80%\r'
 loading4 = f'{BLUE}■■■■■■■■■■{END} 99%\r'
 loading5 = f'{GREEN}■■■■■■■■■■{END} 100%\r'
 
