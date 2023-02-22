@@ -24,10 +24,7 @@ dreamscan=f'''{BLUE}
    ░       ░        ░  ░     ░  ░       ░            ░  ░ ░            ░  ░         ░
  ░                                                      ░                            
  {END}
- 
 '''
-
-
 
 print(dreamscan)
 
@@ -43,7 +40,6 @@ print(f"{BLUE}ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 print(f"{BLUE}ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ{END}")
 print('''
 ''')
-
 
 # Define the loading strings
 loading1 = f'{RED}■▢▢▢▢▢▢▢▢▢{END} 10%\r'
@@ -66,7 +62,6 @@ print()
 print("Dream Scan Successfully Loaded!")
 print('''
 ''')
-
 
 def main():
  
