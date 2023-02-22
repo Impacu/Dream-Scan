@@ -29,18 +29,13 @@ dreamscan=f'''{BLUE}
 
 
 
-banners = [
-    dreamscan,
-
-]
-
-print(random.choice(banners))
+print(dreamscan)
 
 print(f"{BLUE}ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ{END}")
 print(f"{BLUE}ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ{END}")
 print(f"{BLUE}ZZZZ                                                                                 ZZZZ{END}")
-print(f"{BLUE}ZZZZ{END}{GREEN}                           DREAM SCAN 0.0.1                                      {END}{GREEN}ZZZZ{END}")
-print(f"{BLUE}ZZZZ{END}{GREEN}                  Active Reconaissance Made Simple!                              {END}{GREEN}ZZZZ{END}")
+print(f"{BLUE}ZZZZ{END}{GREEN}                           DREAM SCAN 0.0.1                                      {END}{BLUE}ZZZZ{END}")
+print(f"{BLUE}ZZZZ{END}{GREEN}                  ACTIVE RECONNAISSANCE MADE SIMPLE!                              {END}{BLUE}ZZZZ{END}")
 print(f"{BLUE}ZZZZ                                                                                 ZZZZ{END}")
 print(f"{BLUE}ZZZZ{END}{RED}   Written by: David Guzman, Jacob Guerrero, Kuan Chen, Sean Pacurucu Caminero   {END}{RED}ZZZZ{END}")
 print(f"{BLUE}ZZZZ                                                                                 ZZZZ{END}")
