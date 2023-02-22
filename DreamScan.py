@@ -38,7 +38,7 @@ print(f"{BLUE}ZZZZ                                                              
 print(f"{BLUE}ZZZZ{END}{GREEN}                               DREAM SCAN 0.0.1                                  {END}{BLUE}ZZZZ{END}")
 print(f"{BLUE}ZZZZ{END}{GREEN}                      ACTIVE RECONNAISSANCE MADE SIMPLE!                         {END}{BLUE}ZZZZ{END}")
 print(f"{BLUE}ZZZZ                                                                                 ZZZZ{END}")
-print(f"{BLUE}ZZZZ{END}{GREEN}   Written by: David Guzman, Jacob Guerrero, Kuan Chen, Sean Pacurucu Caminero   {END}{BLUE}ZZZZ{END}")
+print(f"{BLUE}ZZZZ{END}{GREEEN}   Written by: David Guzman, Jacob Guerrero, Kuan Chen, Sean Pacurucu Caminero {END}{BLUE}ZZZZ{END}")
 print(f"{BLUE}ZZZZ                                                                                 ZZZZ{END}")
 print(f"{BLUE}ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ{END}")
 print(f"{BLUE}ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ{END}")
@@ -77,19 +77,18 @@ def main():
     port_range = input("Enter port or port range (ex. 1-65535 or a single port like 22 for SSH): ")
     timing = input("Enter timing option (ex. -T4 (0-5)): ")
     output = input("Enter output filename (ex. scan_results.txt) (Leave blank to skip file creation): ")
-
+    print("*** Initializing Nmap Scan ***")
+    Print('''''')
     # Run the Nmap scan with the specified options
     nmap_cmd = ["nmap", "-sV" + scan_type, "-p", port_range, timing]
     # If the user specified an output filename, add it to the command
     if output:
-        print("Initializing Nmap Scan...")
         nmap_cmd += ["-oN", output, target]
         result = subprocess.run(nmap_cmd, capture_output=True)
         print(result.stdout.decode("utf-8"))
 
     # If the user did not specify an output filename, print the results to the console
     if not output:
-        print("Initializing Nmap Scan...")
         nmap_cmd += [target]
         result = subprocess.run(nmap_cmd, capture_output=True)
         print(result.stdout.decode())
