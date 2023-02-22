@@ -78,7 +78,7 @@ def main():
     timing = input("Enter timing option (ex. -T4 (0-5)): ")
     output = input("Enter output filename (ex. scan_results.txt) (Leave blank to skip file creation): ")
     print("*** Initializing Nmap Scan ***")
-    Print('''''')
+    print('''''')
     # Run the Nmap scan with the specified options
     nmap_cmd = ["nmap", "-sV" + scan_type, "-p", port_range, timing]
     # If the user specified an output filename, add it to the command
