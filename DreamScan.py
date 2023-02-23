@@ -103,7 +103,7 @@ def main():
            output = input("Enter a name for the output file: ")
            lHost = input("Choose target IP: ")
            lPort = input("Choose target port: ")
-             for i in range(40):
+           for i in range(40):
            time.sleep(0.25)
            print("Creating Payload!" + spinner[i % len(spinner)], end="\r")
            
