@@ -99,7 +99,7 @@ def main():
     keyword = input("Enter the service and version: ")
     for i in range(40):
          time.sleep(0.25)
-         print(f"Loading Exploits" + circle[i % len(circle)], end="\r")
+         print(f"Loading Exploits!" + circle[i % len(circle)], end="\r")
 
 
     # Execute the searchsploit command with the given keyword
