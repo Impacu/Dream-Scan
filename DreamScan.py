@@ -10,6 +10,14 @@ YELLOW = '\033[33m'
 RED = '\033[31m'
 END = '\033[0m'
 spinner = [f"{GREEN}|{END}", f"{YELLOW}/{END}", f"{BLUE}-{END}", f"{RED}\\{END}"]
+circle = [
+    f"{GREEN}O{END}oooo",
+    f"o{YELLOW}O{END}ooo",
+    f"o{BLUE}o{END}Ooo",
+    f"ooo{RED}O{END}o",
+    f"oooo{BLUE}o{END}"
+]
+
 #BANNER
 dreamscan=f'''{BLUE}
 
@@ -89,7 +97,10 @@ def main():
 
     # Define the keyword to search for
     keyword = input("Enter the service and version: ")
-    print("Loading Exploits...")
+    for i in range(40):
+         time.sleep(0.25)
+         print(f"Loading Exploits" + circle[i % len(circle)], end="\r")
+
 
     # Execute the searchsploit command with the given keyword
     output = subprocess.check_output(["searchsploit", "-t", keyword], universal_newlines=True)
