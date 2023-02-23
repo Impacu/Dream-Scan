@@ -110,7 +110,7 @@ def main():
     
     # function to allow the user to create a meterpreter payload
     def create_payload():
-     answer = input("Do you want to create a meterpreter payload? (y/n)")
+     answer = input("Before you start Metasploit if you are not sure what type of payload you are looking for \n we would suggest Meterpreter, which is a well known payload to create a reverse shell. \n Do you want to create a meterpreter payload? (y/n)")
      if answer == "y":
         output = input("Enter a name for the output file: ")
         lHost = input("Choose target IP: ")
